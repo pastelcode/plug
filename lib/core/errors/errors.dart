@@ -2,13 +2,21 @@ import 'dart:developer';
 
 import 'package:equatable/equatable.dart';
 
+part 'exceptions.dart';
+part 'failures.dart';
+
+/// {@template error_type}
 /// An enum to represent the different types of errors this application has.
-enum ErrorType {
+/// {@endtemplate}
+enum _ErrorTypes {
   /// The exception type.
   exception,
 
   /// The failure type.
-  failure,
+  failure;
+
+  /// {@macro error_type}
+  const _ErrorTypes();
 }
 
 /// {@template base_error}
@@ -17,15 +25,16 @@ enum ErrorType {
 /// When an instance of this base error class is created, a log instruction
 /// is automatically triggered.
 /// {@endtemplate}
-abstract class BaseError extends Equatable {
+abstract class _BaseError extends Equatable {
   /// {@macro base_error}
-  BaseError({
+  _BaseError({
     required this.message,
-    required ErrorType type,
+    required _ErrorTypes type,
   }) {
     log(
       toString(),
       name: type.name,
+      stackTrace: StackTrace.current,
     );
   }
 
@@ -35,10 +44,13 @@ abstract class BaseError extends Equatable {
   @override
   String toString() {
     final propsMap = {
+      // By adding `message` to the map, we avoid the need to add `message` to
+      // the `props` property on each subclass.
       'message': message,
       ...props[0],
     };
 
+    // This returns something like 'MyError(message: my message, myProp: value)'
     return '$runtimeType${propsMap.entries.map<String>(
       (
         MapEntry<String, dynamic> element,

@@ -1,14 +1,14 @@
-import 'package:plug/core/errors/errors.dart';
+part of 'errors.dart';
 
 /// {@template failure}
 /// An interface to represent a failure.
 /// {@endtemplate}
-abstract class Failure extends BaseError {
+abstract class Failure extends _BaseError {
   /// {@macro failure}
   Failure({
     required super.message,
   }) : super(
-          type: ErrorType.failure,
+          type: _ErrorTypes.failure,
         );
 }
 

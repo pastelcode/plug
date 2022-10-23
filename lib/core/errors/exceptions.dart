@@ -1,14 +1,14 @@
-import 'package:plug/core/errors/errors.dart';
+part of 'errors.dart';
 
 /// {@template custom_exception}
 /// An interface to represent an exception.
 /// {@endtemplate}
-abstract class _CustomException extends BaseError implements Exception {
+abstract class _CustomException extends _BaseError implements Exception {
   /// {@macro custom_exception}
   _CustomException({
     required super.message,
   }) : super(
-          type: ErrorType.exception,
+          type: _ErrorTypes.exception,
         );
 }
 
