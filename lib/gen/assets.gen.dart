@@ -20,12 +20,22 @@ class $AssetsFontsGen {
 class $AssetsIllustrationsGen {
   const $AssetsIllustrationsGen();
 
+  /// File path: assets/illustrations/computer.svg
+  SvgGenImage get computer =>
+      const SvgGenImage('assets/illustrations/computer.svg');
+
+  /// File path: assets/illustrations/moon.svg
+  SvgGenImage get moon => const SvgGenImage('assets/illustrations/moon.svg');
+
   /// File path: assets/illustrations/pastelcode.svg
   SvgGenImage get pastelcode =>
       const SvgGenImage('assets/illustrations/pastelcode.svg');
 
+  /// File path: assets/illustrations/sun.svg
+  SvgGenImage get sun => const SvgGenImage('assets/illustrations/sun.svg');
+
   /// List of all assets
-  List<SvgGenImage> get values => [pastelcode];
+  List<SvgGenImage> get values => [computer, moon, pastelcode, sun];
 }
 
 class $AssetsFontsInterGen {
