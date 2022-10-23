@@ -9,6 +9,8 @@ class _Ui extends StatelessWidget {
   ) {
     return MaterialApp.router(
       title: 'Plug',
+      theme: ApplicationTheme.lightTheme,
+      darkTheme: ApplicationTheme.darkTheme,
       scrollBehavior: const _ScrollBehaviorModified(),
       routerConfig: ApplicationRouter.router,
     );

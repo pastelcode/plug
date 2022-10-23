@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:plug/core/router/router.dart';
+import 'package:plug/core/theme/theme.dart';
 
 part 'bloc_providers.dart';
 part 'ui.dart';
