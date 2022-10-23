@@ -7,9 +7,10 @@ class _Ui extends StatelessWidget {
   Widget build(
     BuildContext context,
   ) {
-    return const MaterialApp(
+    return MaterialApp.router(
       title: 'Plug',
-      scrollBehavior: _ScrollBehaviorModified(),
+      scrollBehavior: const _ScrollBehaviorModified(),
+      routerConfig: ApplicationRouter.router,
     );
   }
 }

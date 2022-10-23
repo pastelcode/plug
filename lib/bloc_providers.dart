@@ -11,9 +11,6 @@ class _BlocProviders extends StatelessWidget {
   Widget build(
     BuildContext context,
   ) {
-    return MultiBlocProvider(
-      providers: const [],
-      child: child,
-    );
+    return child;
   }
 }
