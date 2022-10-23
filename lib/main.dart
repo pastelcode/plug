@@ -1,10 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:plug/core/router/router.dart';
 import 'package:plug/core/theme/theme.dart';
+import 'package:plug/features/about/presentation/bloc/bloc/theme_bloc.dart';
 
 part 'bloc_providers.dart';
 part 'ui.dart';

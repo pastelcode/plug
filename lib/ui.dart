@@ -7,12 +7,20 @@ class _Ui extends StatelessWidget {
   Widget build(
     BuildContext context,
   ) {
-    return MaterialApp.router(
-      title: 'Plug',
-      theme: ApplicationTheme.lightTheme,
-      darkTheme: ApplicationTheme.darkTheme,
-      scrollBehavior: const _ScrollBehaviorModified(),
-      routerConfig: ApplicationRouter.router,
+    return BlocBuilder<ThemeBloc, ThemeMode>(
+      builder: (
+        BuildContext context,
+        ThemeMode themeMode,
+      ) {
+        return MaterialApp.router(
+          title: 'Plug',
+          theme: ApplicationTheme.lightTheme,
+          darkTheme: ApplicationTheme.darkTheme,
+          themeMode: themeMode,
+          scrollBehavior: const _ScrollBehaviorModified(),
+          routerConfig: ApplicationRouter.router,
+        );
+      },
     );
   }
 }
