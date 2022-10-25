@@ -7,7 +7,6 @@ import 'package:plug/core/presentation/widgets/custom_bottom_sheet/custom_bottom
 import 'package:plug/core/router/router.dart';
 import 'package:plug/core/theme/theme.dart';
 import 'package:plug/features/about/presentation/bloc/bloc/theme_bloc.dart';
-import 'package:plug/gen/assets.gen.dart';
 
 part 'appearance_option.dart';
 part 'application_menu_button.dart';

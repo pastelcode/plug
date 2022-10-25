@@ -48,11 +48,5 @@ class ApplicationRouter {
         },
       ),
     ],
-    redirect: (context, state) {
-      print(
-        'State -> ${state.location}',
-      );
-      return null;
-    },
   );
 }
