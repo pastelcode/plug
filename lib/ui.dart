@@ -7,6 +7,7 @@ class _Ui extends StatelessWidget {
   Widget build(
     BuildContext context,
   ) {
+    FlutterNativeSplash.remove();
     final applicationRouter = ApplicationRouter();
 
     return BlocBuilder<ThemeBloc, ThemeMode>(
