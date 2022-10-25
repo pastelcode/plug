@@ -42,7 +42,7 @@ class Button extends StatelessWidget {
     );
 
     final children = <Widget>[
-      if (icon != null) ...[
+      if (icon != null) ...<Widget>[
         icon!,
         SizedBox(
           height: isVertical ? 10 : 0,
@@ -52,7 +52,6 @@ class Button extends StatelessWidget {
       title,
     ];
 
-    const mainAxisAlignment = MainAxisAlignment.center;
     const mainAxisSize = MainAxisSize.min;
 
     return Tooltip(
@@ -64,12 +63,10 @@ class Button extends StatelessWidget {
         ),
         child: isVertical
             ? Column(
-                mainAxisAlignment: mainAxisAlignment,
                 mainAxisSize: mainAxisSize,
                 children: children,
               )
             : Row(
-                mainAxisAlignment: mainAxisAlignment,
                 mainAxisSize: mainAxisSize,
                 children: children,
               ),
