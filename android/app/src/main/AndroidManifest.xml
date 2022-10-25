@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.plug">
+    <uses-permission android:name="android.permission.INTERNET" />
     <!-- Provide required visibility configuration for API level 30 and above -->
     <queries>
         <intent>
@@ -8,7 +9,7 @@
         </intent>
     </queries>
     <application
-        android:label="plug"
+        android:label="Plug"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
