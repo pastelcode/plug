@@ -5,31 +5,54 @@ import 'package:plug/features/about/about.dart';
 
 part 'routes.dart';
 
-/// A mixin to encapsulate the application router.
-mixin ApplicationRouter {
+/// {@template application_router}
+/// The application router.
+/// {@endtemplate}
+class ApplicationRouter {
+  /// {@macro application_router}
+  factory ApplicationRouter() {
+    if (_singleton != null) {
+      return _singleton!;
+    }
+    _singleton = ApplicationRouter._internal();
+    return _singleton!;
+  }
+
+  ApplicationRouter._internal();
+
+  static ApplicationRouter? _singleton;
+
   /// The root router for this application.
-  static GoRouter get router => GoRouter(
-        routes: <GoRoute>[
-          GoRoute(
-            name: Routes.home.name,
-            path: Routes.home.path,
-            builder: (
-              BuildContext context,
-              GoRouterState state,
-            ) {
-              return const AboutPage();
-            },
-          ),
-          GoRoute(
-            name: Routes.about.name,
-            path: Routes.about.path,
-            builder: (
-              BuildContext context,
-              GoRouterState state,
-            ) {
-              return const AboutPage();
-            },
-          ),
-        ],
+  final router = GoRouter(
+    debugLogDiagnostics: true,
+    initialLocation: Routes.home.path,
+    routes: <GoRoute>[
+      GoRoute(
+        name: Routes.home.name,
+        path: Routes.home.path,
+        builder: (
+          BuildContext context,
+          GoRouterState state,
+        ) {
+          return const AboutPage();
+        },
+      ),
+      GoRoute(
+        name: Routes.about.name,
+        path: Routes.about.path,
+        builder: (
+          BuildContext context,
+          GoRouterState state,
+        ) {
+          return const AboutPage();
+        },
+      ),
+    ],
+    redirect: (context, state) {
+      print(
+        'State -> ${state.location}',
       );
+      return null;
+    },
+  );
 }

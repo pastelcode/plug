@@ -7,6 +7,8 @@ class _Ui extends StatelessWidget {
   Widget build(
     BuildContext context,
   ) {
+    final applicationRouter = ApplicationRouter();
+
     return BlocBuilder<ThemeBloc, ThemeMode>(
       builder: (
         BuildContext context,
@@ -18,7 +20,7 @@ class _Ui extends StatelessWidget {
           darkTheme: ApplicationTheme.darkTheme,
           themeMode: themeMode,
           scrollBehavior: const _ScrollBehaviorModified(),
-          routerConfig: ApplicationRouter.router,
+          routerConfig: applicationRouter.router,
         );
       },
     );
