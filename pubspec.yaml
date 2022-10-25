@@ -51,6 +51,7 @@ dependencies:
   http: ^0.13.5
   hydrated_bloc: ^8.1.0
   path_provider: ^2.0.11
+  rive: ^0.9.1
   shared_preferences: ^2.0.15
   url_launcher: ^6.1.6
   very_good_analysis: ^3.1.0

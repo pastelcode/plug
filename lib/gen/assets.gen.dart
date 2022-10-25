@@ -10,6 +10,18 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
+import 'package:rive/rive.dart';
+
+class $AssetsAnimationsGen {
+  const $AssetsAnimationsGen();
+
+  /// File path: assets/animations/tree_loading_bar.riv
+  RiveGenImage get treeLoadingBar =>
+      const RiveGenImage('assets/animations/tree_loading_bar.riv');
+
+  /// List of all assets
+  List<RiveGenImage> get values => [treeLoadingBar];
+}
 
 class $AssetsFontsGen {
   const $AssetsFontsGen();
@@ -93,6 +105,7 @@ class $AssetsFontsInterGen {
 class Assets {
   Assets._();
 
+  static const $AssetsAnimationsGen animations = $AssetsAnimationsGen();
   static const $AssetsFontsGen fonts = $AssetsFontsGen();
   static const $AssetsIllustrationsGen illustrations =
       $AssetsIllustrationsGen();
@@ -206,6 +219,39 @@ class SvgGenImage {
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
       theme: theme,
+    );
+  }
+
+  String get path => _assetName;
+}
+
+class RiveGenImage {
+  const RiveGenImage(this._assetName);
+
+  final String _assetName;
+
+  RiveAnimation rive({
+    String? artboard,
+    List<String> animations = const [],
+    List<String> stateMachines = const [],
+    BoxFit? fit,
+    Alignment? alignment,
+    Widget? placeHolder,
+    bool antialiasing = true,
+    List<RiveAnimationController> controllers = const [],
+    OnInitCallback? onInit,
+  }) {
+    return RiveAnimation.asset(
+      _assetName,
+      artboard: artboard,
+      animations: animations,
+      stateMachines: stateMachines,
+      fit: fit,
+      alignment: alignment,
+      placeHolder: placeHolder,
+      antialiasing: antialiasing,
+      controllers: controllers,
+      onInit: onInit,
     );
   }
 
