@@ -5,8 +5,8 @@ import 'package:plug/core/theme/theme.dart';
 
 /// Shows a custom modal bottom sheet.
 ///
-/// Consider using a [StatelessWidget] that returns a [Column] to pass [child]
-/// to take advantage of Flutter's Hot Reload.
+/// Consider using a [StatelessWidget] that returns a [SliverList] to pass
+/// [child] to take advantage of Flutter's Hot Reload.
 Future<T?> showCustomModalBottomSheet<T>({
   required BuildContext context,
   Widget? title,
@@ -24,6 +24,12 @@ Future<T?> showCustomModalBottomSheet<T>({
   final result = await showModalBottomSheet<T>(
     context: context,
     isScrollControlled: true,
+    constraints: BoxConstraints(
+      maxHeight: MediaQuery.of(
+            context,
+          ).size.height *
+          0.9,
+    ),
     builder: (
       BuildContext context,
     ) {
@@ -58,47 +64,42 @@ class _CustomBottomSheet extends StatelessWidget {
   Widget build(
     BuildContext context,
   ) {
-    return DraggableScrollableSheet(
-      expand: false,
-      maxChildSize: 0.8,
-      builder: (
-        BuildContext context,
-        ScrollController scrollController,
-      ) {
-        return CustomScrollView(
-          controller: scrollController,
-          slivers: <Widget>[
-            SliverAppBar(
-              toolbarHeight: ApplicationTheme.appBarHeight,
-              pinned: true,
-              centerTitle: false,
-              title: title != null
-                  ? Row(
-                      children: <Widget>[
-                        const CustomCloseButton(),
-                        const SizedBox(
-                          width: 20,
-                        ),
-                        DefaultTextStyle.merge(
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
-                          child: title!,
-                        ),
-                      ],
-                    )
-                  : null,
-              automaticallyImplyLeading: false,
+    return CustomScrollView(
+      shrinkWrap: true,
+      slivers: <Widget>[
+        SliverAppBar(
+          toolbarHeight: ApplicationTheme.appBarHeight,
+          pinned: true,
+          centerTitle: false,
+          title: title != null
+              ? Row(
+                  children: <Widget>[
+                    const CustomCloseButton(),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    DefaultTextStyle.merge(
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                      child: title!,
+                    ),
+                  ],
+                )
+              : null,
+          automaticallyImplyLeading: false,
+        ),
+        SliverPadding(
+          padding: padding.add(
+            EdgeInsets.only(
+              bottom: MediaQuery.of(
+                context,
+              ).padding.bottom,
             ),
-            SliverPadding(
-              padding: padding,
-              sliver: SliverToBoxAdapter(
-                child: child,
-              ),
-            ),
-          ],
-        );
-      },
+          ),
+          sliver: child,
+        ),
+      ],
     );
   }
 }

@@ -35,63 +35,65 @@ class _AppearanceOptionsContent extends StatelessWidget {
   Widget build(
     BuildContext context,
   ) {
-    return Column(
-      children: <Widget>[
-        BlocBuilder<ThemeBloc, ThemeMode>(
-          builder: (
-            BuildContext context,
-            ThemeMode state,
-          ) {
-            return GridView.count(
-              physics: const NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              crossAxisCount: 3,
-              crossAxisSpacing: 5,
-              children: <Widget>[
-                _ChangeAppearanceButton(
-                  themeMode: ThemeMode.light,
-                  currentThemeMode: state,
-                  name: 'Light',
-                  icon: const Icon(
-                    FlutterRemix.sun_line,
-                    size: 32,
+    return SliverList(
+      delegate: SliverChildListDelegate(
+        <Widget>[
+          BlocBuilder<ThemeBloc, ThemeMode>(
+            builder: (
+              BuildContext context,
+              ThemeMode state,
+            ) {
+              return GridView.count(
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                crossAxisCount: 3,
+                crossAxisSpacing: 5,
+                children: <Widget>[
+                  _ChangeAppearanceButton(
+                    themeMode: ThemeMode.light,
+                    currentThemeMode: state,
+                    name: 'Light',
+                    icon: const Icon(
+                      FlutterRemix.sun_line,
+                      size: 32,
+                    ),
+                    selectedIcon: const Icon(
+                      FlutterRemix.sun_fill,
+                      size: 32,
+                    ),
                   ),
-                  selectedIcon: const Icon(
-                    FlutterRemix.sun_fill,
-                    size: 32,
+                  _ChangeAppearanceButton(
+                    themeMode: ThemeMode.dark,
+                    currentThemeMode: state,
+                    name: 'Dark',
+                    icon: const Icon(
+                      FlutterRemix.moon_line,
+                      size: 32,
+                    ),
+                    selectedIcon: const Icon(
+                      FlutterRemix.moon_fill,
+                      size: 32,
+                    ),
                   ),
-                ),
-                _ChangeAppearanceButton(
-                  themeMode: ThemeMode.dark,
-                  currentThemeMode: state,
-                  name: 'Dark',
-                  icon: const Icon(
-                    FlutterRemix.moon_line,
-                    size: 32,
+                  _ChangeAppearanceButton(
+                    themeMode: ThemeMode.system,
+                    currentThemeMode: state,
+                    name: 'System',
+                    icon: const Icon(
+                      FlutterRemix.computer_line,
+                      size: 32,
+                    ),
+                    selectedIcon: const Icon(
+                      FlutterRemix.computer_fill,
+                      size: 32,
+                    ),
                   ),
-                  selectedIcon: const Icon(
-                    FlutterRemix.moon_fill,
-                    size: 32,
-                  ),
-                ),
-                _ChangeAppearanceButton(
-                  themeMode: ThemeMode.system,
-                  currentThemeMode: state,
-                  name: 'System',
-                  icon: const Icon(
-                    FlutterRemix.computer_line,
-                    size: 32,
-                  ),
-                  selectedIcon: const Icon(
-                    FlutterRemix.computer_fill,
-                    size: 32,
-                  ),
-                ),
-              ],
-            );
-          },
-        ),
-      ],
+                ],
+              );
+            },
+          ),
+        ],
+      ),
     );
   }
 }

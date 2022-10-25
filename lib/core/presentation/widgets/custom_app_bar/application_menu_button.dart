@@ -46,20 +46,12 @@ class _ApplicationMenuButtonContent extends StatelessWidget {
   Widget build(
     BuildContext context,
   ) {
-    return Column(
-      children: <Widget>[
-        const _AppearanceOptions(),
-        ListTile(
-          title: const Text(
-            'About',
-          ),
-          onTap: () {
-            context.pushNamed(
-              Routes.about.name,
-            );
-          },
-        ),
-      ],
+    return SliverList(
+      delegate: SliverChildListDelegate(
+        <Widget>[
+          const _AppearanceOptions(),
+        ],
+      ),
     );
   }
 }
