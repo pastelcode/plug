@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_remix/flutter_remix.dart';
-import 'package:go_router/go_router.dart';
 import 'package:plug/core/presentation/widgets/custom_back_button/custom_back_button.dart';
 import 'package:plug/core/presentation/widgets/custom_bottom_sheet/custom_bottom_sheet.dart';
-import 'package:plug/core/router/router.dart';
 import 'package:plug/core/theme/theme.dart';
 import 'package:plug/features/about/presentation/bloc/bloc/theme_bloc.dart';
 
