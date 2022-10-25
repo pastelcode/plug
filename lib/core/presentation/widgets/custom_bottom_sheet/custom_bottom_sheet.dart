@@ -75,9 +75,9 @@ class _CustomBottomSheet extends StatelessWidget {
               title: title != null
                   ? Row(
                       children: <Widget>[
-                        const CustomBackButton(),
+                        const CustomCloseButton(),
                         const SizedBox(
-                          width: 10,
+                          width: 15,
                         ),
                         DefaultTextStyle.merge(
                           style: const TextStyle(

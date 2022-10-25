@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_remix/flutter_remix.dart';
+import 'package:go_router/go_router.dart';
 
 /// {@template custom_back_button}
 /// A custom back button.
@@ -21,9 +22,7 @@ class CustomBackButton extends StatelessWidget {
         size: 20,
       ),
       onPressed: () {
-        Navigator.maybePop(
-          context,
-        );
+        context.pop();
       },
     );
   }
