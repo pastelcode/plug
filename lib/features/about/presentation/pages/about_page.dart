@@ -83,36 +83,42 @@ class AboutPage extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
-          Button(
-            onPressed: () {
-              launchUri(
-                uri: ApplicationInformation.repository,
-              );
-            },
-            tooltip: 'Open Github repository',
-            icon: const Icon(
-              FlutterRemix.github_line,
-            ),
-            title: const Text(
-              'Github',
+          // These buttons are wrapped in an `Align` widgets to avoid their
+          // widths go from edge to edge.
+          Align(
+            child: Button(
+              onPressed: () {
+                launchUri(
+                  uri: ApplicationInformation.repository,
+                );
+              },
+              tooltip: 'Open Github repository',
+              icon: const Icon(
+                FlutterRemix.github_line,
+              ),
+              title: const Text(
+                'Github',
+              ),
             ),
           ),
-          Button(
-            onPressed: () {
-              showAboutDialog(
-                context: context,
-                applicationIcon: const Icon(
-                  FlutterRemix.plug_line,
-                ),
-                applicationName: 'Plug',
-                applicationVersion: '0.1.0',
-              );
-            },
-            icon: const Icon(
-              FlutterRemix.information_line,
-            ),
-            title: const Text(
-              'More info',
+          Align(
+            child: Button(
+              onPressed: () {
+                showAboutDialog(
+                  context: context,
+                  applicationIcon: const Icon(
+                    FlutterRemix.plug_line,
+                  ),
+                  applicationName: 'Plug',
+                  applicationVersion: '0.1.0',
+                );
+              },
+              icon: const Icon(
+                FlutterRemix.information_line,
+              ),
+              title: const Text(
+                'More info',
+              ),
             ),
           ),
         ],
