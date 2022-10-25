@@ -77,7 +77,7 @@ class _CustomBottomSheet extends StatelessWidget {
                       children: <Widget>[
                         const CustomCloseButton(),
                         const SizedBox(
-                          width: 15,
+                          width: 20,
                         ),
                         DefaultTextStyle.merge(
                           style: const TextStyle(
@@ -92,12 +92,8 @@ class _CustomBottomSheet extends StatelessWidget {
             ),
             SliverPadding(
               padding: padding,
-              sliver: SliverList(
-                delegate: SliverChildListDelegate(
-                  <Widget>[
-                    if (child != null) ...[child!] else ...<Widget>[],
-                  ],
-                ),
+              sliver: SliverToBoxAdapter(
+                child: child,
               ),
             ),
           ],
