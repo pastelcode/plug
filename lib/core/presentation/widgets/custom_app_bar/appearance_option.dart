@@ -52,19 +52,40 @@ class _AppearanceOptionsContent extends StatelessWidget {
                   themeMode: ThemeMode.light,
                   currentThemeMode: state,
                   name: 'Light',
-                  icon: Assets.illustrations.sun.svg(),
+                  icon: const Icon(
+                    FlutterRemix.sun_line,
+                    size: 32,
+                  ),
+                  selectedIcon: const Icon(
+                    FlutterRemix.sun_fill,
+                    size: 32,
+                  ),
                 ),
                 _ChangeAppearanceButton(
                   themeMode: ThemeMode.dark,
                   currentThemeMode: state,
                   name: 'Dark',
-                  icon: Assets.illustrations.moon.svg(),
+                  icon: const Icon(
+                    FlutterRemix.moon_line,
+                    size: 32,
+                  ),
+                  selectedIcon: const Icon(
+                    FlutterRemix.moon_fill,
+                    size: 32,
+                  ),
                 ),
                 _ChangeAppearanceButton(
                   themeMode: ThemeMode.system,
                   currentThemeMode: state,
                   name: 'System',
-                  icon: Assets.illustrations.computer.svg(),
+                  icon: const Icon(
+                    FlutterRemix.computer_line,
+                    size: 32,
+                  ),
+                  selectedIcon: const Icon(
+                    FlutterRemix.computer_fill,
+                    size: 32,
+                  ),
                 ),
               ],
             );
@@ -79,12 +100,14 @@ class _ChangeAppearanceButton extends StatelessWidget {
   const _ChangeAppearanceButton({
     required this.currentThemeMode,
     required this.icon,
+    required this.selectedIcon,
     required this.name,
     required this.themeMode,
   });
 
   final ThemeMode currentThemeMode;
   final Widget icon;
+  final Widget selectedIcon;
   final String name;
   final ThemeMode themeMode;
 
@@ -124,7 +147,7 @@ class _ChangeAppearanceButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Expanded(
-              child: icon,
+              child: isSelected ? selectedIcon : icon,
             ),
             const SizedBox(
               height: 10,
