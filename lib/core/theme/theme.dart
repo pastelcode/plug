@@ -7,7 +7,7 @@ mixin ApplicationTheme {
   static double get borderRadius => 10;
 
   /// The primary color of the application.
-  static Color get primaryColor => Colors.purple;
+  static Color get primaryColor => const Color(0xFF001233);
 
   /// The height for global app bars.
   static double get appBarHeight => 75;
