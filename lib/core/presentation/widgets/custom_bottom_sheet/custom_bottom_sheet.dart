@@ -93,8 +93,9 @@ class _CustomBottomSheet extends StatelessWidget {
           padding: padding.add(
             EdgeInsets.only(
               bottom: MediaQuery.of(
-                context,
-              ).padding.bottom,
+                    context,
+                  ).padding.bottom *
+                  2,
             ),
           ),
           sliver: child,
