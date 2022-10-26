@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_remix/flutter_remix.dart';
 import 'package:plug/core/config/config.dart';
 import 'package:plug/core/presentation/widgets/widgets.dart';
+import 'package:plug/core/theme/theme.dart';
 import 'package:plug/core/utils/utils.dart';
 import 'package:plug/gen/assets.gen.dart';
 
@@ -106,8 +107,15 @@ class AboutPage extends StatelessWidget {
               onPressed: () {
                 showAboutDialog(
                   context: context,
-                  applicationIcon: const Icon(
-                    FlutterRemix.plug_line,
+                  applicationIcon: ClipRRect(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(
+                        ApplicationTheme.borderRadius,
+                      ),
+                    ),
+                    child: Assets.images.logo.image(
+                      height: 75,
+                    ),
                   ),
                   applicationName: 'Plug',
                   applicationVersion: '0.1.0',

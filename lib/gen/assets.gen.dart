@@ -50,6 +50,38 @@ class $AssetsIllustrationsGen {
   List<SvgGenImage> get values => [computer, moon, pastelcode, sun];
 }
 
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/logo.png
+  AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
+
+  /// File path: assets/images/logo_background.png
+  AssetGenImage get logoBackground =>
+      const AssetGenImage('assets/images/logo_background.png');
+
+  /// File path: assets/images/logo_foreground.png
+  AssetGenImage get logoForeground =>
+      const AssetGenImage('assets/images/logo_foreground.png');
+
+  /// File path: assets/images/logo_foreground_small.png
+  AssetGenImage get logoForegroundSmall =>
+      const AssetGenImage('assets/images/logo_foreground_small.png');
+
+  /// File path: assets/images/logo_foreground_white.png
+  AssetGenImage get logoForegroundWhite =>
+      const AssetGenImage('assets/images/logo_foreground_white.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        logo,
+        logoBackground,
+        logoForeground,
+        logoForegroundSmall,
+        logoForegroundWhite
+      ];
+}
+
 class $AssetsFontsInterGen {
   const $AssetsFontsInterGen();
 
@@ -109,6 +141,7 @@ class Assets {
   static const $AssetsFontsGen fonts = $AssetsFontsGen();
   static const $AssetsIllustrationsGen illustrations =
       $AssetsIllustrationsGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
 class AssetGenImage {
