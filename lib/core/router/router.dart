@@ -2,6 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:plug/features/about/about.dart';
+import 'package:plug/features/home/home.dart';
 
 part 'routes.dart';
 
@@ -34,7 +35,7 @@ class ApplicationRouter {
           BuildContext context,
           GoRouterState state,
         ) {
-          return const AboutPage();
+          return const HomePage();
         },
       ),
       GoRoute(
