@@ -41,14 +41,20 @@ class AboutPage extends StatelessWidget {
 Plug es una aplicación guatemalteca para aprender LENSEGUA.''',
           style: Theme.of(
             context,
-          ).textTheme.subtitle1,
+          ).textTheme.headline6,
         ),
         const SizedBox(
-          height: 10,
+          height: 15,
         ),
         const Text(
           '''
-En Pastel Code siempre nos ha fascinado cómo las personas nos podemos comunicar por medio de señas y nos parece súper atractivo que alguien lo domine. Es por eso que decidimos crear Plug para lograr aprender al enseñar y enseñar a aquellos que quieran aprender.''',
+En Pastel Code siempre nos ha fascinado cómo las personas nos podemos comunicar por medio de señas y nos parece súper atractivo que alguien lo domine. Es por eso que decidimos crear Plug para lograr aprender al enseñar y enseñar a aquellos que quieran aprender.
+
+Si deseas contribuir al proyecto, siéntete libre de hacer tus PR al repositorio de Github que encontrarás más abajo.
+
+Utilizamos Flutter para hacer un desarrollo impecable y rápido, GoRouter para el manejo de las rutas, Flutter Bloc para manejo del estado y Clean Architecture para no perdernos en el camino.
+
+Para los modelos de las señas utilizamos Blender y el archivo principal lo encontrarás en el repositorio de Github de igual manera. Si deseas contribuir al crear animaciones o mejorar las existentes, siéntete en plena libertad de expresar tus talentos.''',
         ),
         const SizedBox(
           height: 15,

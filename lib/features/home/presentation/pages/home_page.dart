@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plug/gen/assets.gen.dart';
 
 /// {@template home_page}
 /// A page to show welcome information.
@@ -18,20 +19,23 @@ class HomePage extends StatelessWidget {
         horizontal: 20,
       ),
       children: <Widget>[
-        Text(
-          'Bienvenido a Plug',
-          style: Theme.of(
-            context,
-          ).textTheme.headline2!.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
+        SizedBox(
+          height: 300,
+          child: Assets.animations.fire.rive(
+            animations: <String>[
+              'idle',
+            ],
+          ),
         ),
-        const SizedBox(
-          height: 30,
-        ),
-        const Text(
-          '''
-Plug es una aplicación para aprender LENSEGUA con el fin de hacer que más personas se sumen a est''',
+        Align(
+          child: Text(
+            'Próximamente',
+            style: Theme.of(
+              context,
+            ).textTheme.headline4!.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
+          ),
         ),
       ],
     );

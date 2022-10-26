@@ -8,7 +8,9 @@ class _AppearanceOptions extends StatelessWidget {
     BuildContext context,
   ) {
     return ListTile(
-      title: const Text('Appearance'),
+      title: const Text(
+        'Apariencia',
+      ),
       onTap: () {
         _showAppearanceOption(
           context: context,
@@ -22,7 +24,9 @@ class _AppearanceOptions extends StatelessWidget {
   }) async {
     await showCustomModalBottomSheet<void>(
       context: context,
-      title: const Text('Appearance'),
+      title: const Text(
+        'Apariencia',
+      ),
       child: const _AppearanceOptionsContent(),
     );
   }
@@ -52,7 +56,7 @@ class _AppearanceOptionsContent extends StatelessWidget {
                   _ChangeAppearanceButton(
                     themeMode: ThemeMode.light,
                     currentThemeMode: state,
-                    name: 'Light',
+                    name: 'Claro',
                     icon: const Icon(
                       FlutterRemix.sun_line,
                       size: 32,
@@ -65,7 +69,7 @@ class _AppearanceOptionsContent extends StatelessWidget {
                   _ChangeAppearanceButton(
                     themeMode: ThemeMode.dark,
                     currentThemeMode: state,
-                    name: 'Dark',
+                    name: 'Oscuro',
                     icon: const Icon(
                       FlutterRemix.moon_line,
                       size: 32,
@@ -78,7 +82,7 @@ class _AppearanceOptionsContent extends StatelessWidget {
                   _ChangeAppearanceButton(
                     themeMode: ThemeMode.system,
                     currentThemeMode: state,
-                    name: 'System',
+                    name: 'Sistema',
                     icon: const Icon(
                       FlutterRemix.computer_line,
                       size: 32,

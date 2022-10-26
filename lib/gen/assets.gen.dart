@@ -15,12 +15,15 @@ import 'package:rive/rive.dart';
 class $AssetsAnimationsGen {
   const $AssetsAnimationsGen();
 
+  /// File path: assets/animations/fire.riv
+  RiveGenImage get fire => const RiveGenImage('assets/animations/fire.riv');
+
   /// File path: assets/animations/tree_loading_bar.riv
   RiveGenImage get treeLoadingBar =>
       const RiveGenImage('assets/animations/tree_loading_bar.riv');
 
   /// List of all assets
-  List<RiveGenImage> get values => [treeLoadingBar];
+  List<RiveGenImage> get values => [fire, treeLoadingBar];
 }
 
 class $AssetsFontsGen {
