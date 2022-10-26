@@ -84,11 +84,11 @@ class _AppearanceOptionsContent extends StatelessWidget {
                     currentThemeMode: state,
                     name: 'Sistema',
                     icon: const Icon(
-                      FlutterRemix.computer_line,
+                      FlutterRemix.macbook_line,
                       size: 32,
                     ),
                     selectedIcon: const Icon(
-                      FlutterRemix.computer_fill,
+                      FlutterRemix.macbook_fill,
                       size: 32,
                     ),
                   ),
@@ -127,12 +127,14 @@ class _ChangeAppearanceButton extends StatelessWidget {
     final isSelected = currentThemeMode == themeMode;
 
     return TextButton(
-      onPressed: () {
+      onPressed: () async {
         context.read<ThemeBloc>().add(
               ChangeTheme(
                 themeMode: themeMode,
               ),
             );
+
+        await HapticFeedback.selectionClick();
       },
       style: OutlinedButton.styleFrom(
         shape: RoundedRectangleBorder(
