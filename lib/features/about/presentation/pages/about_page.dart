@@ -20,117 +20,128 @@ class AboutPage extends StatelessWidget {
   Widget build(
     BuildContext context,
   ) {
-    return Scaffold(
-      appBar: const CustomAppBar(
-        title: Text(
-          'About',
-        ),
+    return ListView(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 20,
       ),
-      body: ListView(
-        children: <Widget>[
-          const SizedBox(
-            height: 100,
+      children: <Widget>[
+        Text(
+          'Bienvenido a Plug',
+          style: Theme.of(
+            context,
+          ).textTheme.headline2!.copyWith(
+                fontWeight: FontWeight.bold,
+              ),
+        ),
+        const SizedBox(
+          height: 30,
+        ),
+        Text(
+          '''
+Plug es una aplicación guatemalteca para aprender LENSEGUA.''',
+          style: Theme.of(
+            context,
+          ).textTheme.subtitle1,
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        const Text(
+          '''
+En Pastel Code siempre nos ha fascinado cómo las personas nos podemos comunicar por medio de señas y nos parece súper atractivo que alguien lo domine. Es por eso que decidimos crear Plug para lograr aprender al enseñar y enseñar a aquellos que quieran aprender.''',
+        ),
+        const SizedBox(
+          height: 15,
+        ),
+        SizedBox(
+          height: 100,
+          child: Assets.animations.treeLoadingBar.rive(),
+        ),
+        const SizedBox(
+          height: 75,
+        ),
+        GestureDetector(
+          onTap: () {
+            launchUri(
+              uri: ApplicationInformation.ownerWebsite,
+            );
+          },
+          child: Column(
+            children: <Widget>[
+              ApplicationInformation.ownerLogo.svg(
+                height: 75,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Text.rich(
+                TextSpan(
+                  text: 'Desarrollado por ',
+                  style: Theme.of(
+                    context,
+                  ).textTheme.labelSmall,
+                  children: <InlineSpan>[
+                    TextSpan(
+                      text: ApplicationInformation.ownerName,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
           ),
-          Align(
-            child: Text(
-              'Hi!',
-              style: Theme.of(
-                context,
-              ).textTheme.headline1!.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
-            ),
-          ),
-          SizedBox(
-            height: 100,
-            child: Assets.animations.treeLoadingBar.rive(),
-          ),
-          const SizedBox(
-            height: 75,
-          ),
-          GestureDetector(
-            onTap: () {
+        ),
+        const SizedBox(
+          height: 50,
+        ),
+        // These buttons are wrapped in an `Align` widgets to avoid their
+        // widths go from edge to edge.
+        Align(
+          child: Button(
+            onPressed: () {
               launchUri(
-                uri: ApplicationInformation.ownerWebsite,
+                uri: ApplicationInformation.repository,
               );
             },
-            child: Column(
-              children: <Widget>[
-                ApplicationInformation.ownerLogo.svg(
-                  height: 75,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Text.rich(
-                  TextSpan(
-                    text: 'Developed by ',
-                    style: Theme.of(
-                      context,
-                    ).textTheme.caption,
-                    children: <InlineSpan>[
-                      TextSpan(
-                        text: ApplicationInformation.ownerName,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ],
+            tooltip: 'Open Github repository',
+            icon: const Icon(
+              FlutterRemix.github_line,
+            ),
+            title: const Text(
+              'Github',
             ),
           ),
-          const SizedBox(
-            height: 50,
-          ),
-          // These buttons are wrapped in an `Align` widgets to avoid their
-          // widths go from edge to edge.
-          Align(
-            child: Button(
-              onPressed: () {
-                launchUri(
-                  uri: ApplicationInformation.repository,
-                );
-              },
-              tooltip: 'Open Github repository',
-              icon: const Icon(
-                FlutterRemix.github_line,
-              ),
-              title: const Text(
-                'Github',
-              ),
-            ),
-          ),
-          Align(
-            child: Button(
-              onPressed: () {
-                showAboutDialog(
-                  context: context,
-                  applicationIcon: ClipRRect(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(
-                        ApplicationTheme.borderRadius,
-                      ),
-                    ),
-                    child: Assets.images.logo.image(
-                      height: 75,
+        ),
+        Align(
+          child: Button(
+            onPressed: () {
+              showAboutDialog(
+                context: context,
+                applicationIcon: ClipRRect(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(
+                      ApplicationTheme.borderRadius,
                     ),
                   ),
-                  applicationName: 'Plug',
-                  applicationVersion: '0.1.0',
-                );
-              },
-              icon: const Icon(
-                FlutterRemix.information_line,
-              ),
-              title: const Text(
-                'More info',
-              ),
+                  child: Assets.images.logo.image(
+                    height: 75,
+                  ),
+                ),
+                applicationName: 'Plug',
+                applicationVersion: '0.1.0',
+              );
+            },
+            icon: const Icon(
+              FlutterRemix.information_line,
+            ),
+            title: const Text(
+              'Más información',
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
