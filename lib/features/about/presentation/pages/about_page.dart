@@ -38,7 +38,7 @@ class AboutPage extends StatelessWidget {
         ),
         Text(
           '''
-Plug es una aplicación guatemalteca para aprender LENSEGUA.''',
+Plug es una aplicación guatemalteca para aprender LENSEGUA''',
           style: Theme.of(
             context,
           ).textTheme.bodyMedium,
