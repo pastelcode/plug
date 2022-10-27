@@ -125,7 +125,5 @@ flutter_icons:
 flutter_native_splash:
   android: true
   ios: true
-  color: '#001233'
-  color_dark: '#aec6ff'
-  image: assets/images/logo_foreground_white.png
-  image_dark: assets/images/logo_foreground.png
+  color: '#aec6ff'
+  image: assets/images/logo_foreground.png
