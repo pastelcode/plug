@@ -29,22 +29,29 @@ class AboutPage extends StatelessWidget {
           'Bienvenido a Plug',
           style: Theme.of(
             context,
-          ).textTheme.headline2!.copyWith(
+          ).textTheme.headline5!.copyWith(
                 fontWeight: FontWeight.bold,
               ),
         ),
         const SizedBox(
-          height: 30,
+          height: 15,
         ),
         Text(
           '''
 Plug es una aplicación guatemalteca para aprender LENSEGUA.''',
           style: Theme.of(
             context,
-          ).textTheme.headline6,
+          ).textTheme.bodyMedium,
         ),
         const SizedBox(
-          height: 15,
+          height: 25,
+        ),
+        SizedBox(
+          height: 100,
+          child: Assets.animations.treeLoadingBar.rive(),
+        ),
+        const SizedBox(
+          height: 30,
         ),
         const Text(
           '''
@@ -57,14 +64,7 @@ Utilizamos Flutter para hacer un desarrollo impecable y rápido, GoRouter para e
 Para los modelos de las señas utilizamos Blender y el archivo principal lo encontrarás en el repositorio de Github de igual manera. Si deseas contribuir al crear animaciones o mejorar las existentes, siéntete en plena libertad de expresar tus talentos.''',
         ),
         const SizedBox(
-          height: 15,
-        ),
-        SizedBox(
-          height: 100,
-          child: Assets.animations.treeLoadingBar.rive(),
-        ),
-        const SizedBox(
-          height: 75,
+          height: 50,
         ),
         GestureDetector(
           onTap: () {
